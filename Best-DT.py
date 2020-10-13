@@ -117,7 +117,7 @@ val = pd.read_csv('val_1.csv')
 x_val = val.iloc[:,:-1]
 
 y_val = val.iloc[:,-1:]
-results = clf_GS.predict(x_val)
+#results = clf_GS.predict(x_val)
 
 
 # Testing using the results from grid but with the DT classifier
@@ -128,25 +128,25 @@ dec_tree = DecisionTreeClassifier(criterion=cr, max_depth = clf_GS.best_estimato
 
 
 dec_tree.fit(x_train, y_train)
+#dec_tree.fit(x_val, y_val)
+
+
+results = dec_tree.predict(x_test)
+#results = dec_tree.predict(x_val)
 
 
 
-#results = dec_tree.predict(x_test)
-results = dec_tree.predict(x_val)
 
 
 
-results
+
+#clf_GS.score(x_val,y_val)
+clf_GS.score(x_test,y_test)
 
 
 
-clf_GS.score(x_val,y_val)
-#clf_GS.score(y_val,results)
-
-
-
-print(classification_report(y_val,results))
-print(confusion_matrix(y_val,results))
+print(classification_report(y_test,results))
+print(confusion_matrix(y_test,results))
 
 
 # clf_GS.best_estimator_
