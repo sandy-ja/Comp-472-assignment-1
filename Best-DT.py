@@ -56,10 +56,11 @@ print('Best class_weight:', clf_GS1.best_estimator_.get_params()['class_weight']
 print('Grid search Score :', clf_GS1.best_score_)
 
 # Testing using the results from grid but with the DT classifier
-dec_tree = DecisionTreeClassifier(criterion=cr, max_depth = clf_GS1.best_estimator_.get_params()['max_depth'] ,min_samples_split = clf_GS1.best_estimator_.get_params()['min_samples_split'], min_impurity_decrease = clf_GS1.best_estimator_.get_params()['min_impurity_decrease'], class_weight = clf_GS1.best_estimator_.get_params()['class_weight'])
-
+#Next three lines are used for the demo, or can be used to fit the dec_tree instead of the clf_GS1 best estimator
+# dec_tree = DecisionTreeClassifier(criterion=cr, max_depth = clf_GS1.best_estimator_.get_params()['max_depth'] ,min_samples_split = clf_GS1.best_estimator_.get_params()['min_samples_split'], min_impurity_decrease = clf_GS1.best_estimator_.get_params()['min_impurity_decrease'], class_weight = clf_GS1.best_estimator_.get_params()['class_weight'])
 # dec_tree.fit(x_train, y_train)
 # results = dec_tree.predict(x_test)
+
 final_model=clf_GS1.best_estimator_
 y_pred = final_model.predict(x_test)
 
@@ -106,8 +107,8 @@ print('Grid search Score :', clf_GS2.best_score_)
 
 
 # Testing using the results from grid but with the DT classifier
-dec_treeG = DecisionTreeClassifier(criterion=crG, max_depth = clf_GS2.best_estimator_.get_params()['max_depth'] ,min_samples_split = clf_GS2.best_estimator_.get_params()['min_samples_split'], min_impurity_decrease = clf_GS2.best_estimator_.get_params()['min_impurity_decrease'], class_weight = clf_GS2.best_estimator_.get_params()['class_weight'])
-
+#Next three lines are used for the demo, or can be used to fit the dec_tree instead of the clf_GS1 best estimator
+# dec_treeG = DecisionTreeClassifier(criterion=crG, max_depth = clf_GS2.best_estimator_.get_params()['max_depth'] ,min_samples_split = clf_GS2.best_estimator_.get_params()['min_samples_split'], min_impurity_decrease = clf_GS2.best_estimator_.get_params()['min_impurity_decrease'], class_weight = clf_GS2.best_estimator_.get_params()['class_weight'])
 # dec_tree.fit(x_train, y_train)
 # results = dec_tree.predict(x_test)
 final_modelG=clf_GS2.best_estimator_
