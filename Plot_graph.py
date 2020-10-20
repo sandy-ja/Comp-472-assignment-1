@@ -43,17 +43,11 @@ sd = symbols_dictionary.values()
 
 #use the matplolib library to graph the required alphabet and symbols
 
-#sns.histplot(y_train_alphabet)
 
-fig, (ax1, ax2) = plt.subplots(1, 2)
-fig.suptitle('Horizontally stacked subplots')
-ax1.plot(y_info_alphabet, ad)
-ax2.plot(y_info_symbols, sd)
-
-# fig, axs = plt.subplots(2)
-# fig.suptitle('The Distribution of Numbers of Alphabet and Symbol letters ')
-# axs[0].bar(y_info_alphabet, ad, color= "purple")
-# axs[1].bar(y_info_symbols, sd, color="pink")
-# plt.xticks(fontsize=12, rotation=30)
-# plt.savefig("alphabet and symbols graph.png")
-# plt.show()
+fig, axs = plt.subplots(2)
+fig.suptitle('The Distribution of Numbers of Alphabet and Symbol letters ')
+axs[0].bar(y_info_alphabet, ad, color= "purple")
+axs[1].bar(y_info_symbols, sd, color="pink")
+plt.xticks(fontsize=12, rotation=90)
+plt.savefig("alphabet and symbols graph.png")
+plt.show()
